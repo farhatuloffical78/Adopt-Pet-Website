@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- daisyUi cdn -->
+<link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.12/dist/full.min.css" rel="stylesheet" type="text/css" />
+<script src="https://cdn.tailwindcss.com"></script>
+<!-- tailwind cdn -->
+<script src="https://cdn.tailwindcss.com"></script>
+<!-- font awesome -->
+<script src="https://kit.fontawesome.com/fbd9117beb.js" crossorigin="anonymous"></script>
+<!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                clifford: '#da373d',
+              },
+              fontFamily:{
+              
+                font: ['Lato', 'sans-serif'], 
+              },
+            }
+          }
+        }
+      </script>
+
+<style>
+  /* Spinner styles */
+  #spinner {
+    display: none;
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-top: 4px solid #000;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+  }
+
+  /* Spinner animation */
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+</style>
+
+
+</head>
+<body class="text-font">
+    <header>
+<nav>
+    <div class="navbar w-full p-5  md:w-10/12 mx-auto  flex justify-center items-center">
+        <div class="navbar-start">
+          <div class="dropdown">
+           
+            
+          </div>
+          <img src="./images/logo.webp" class="h-6" alt="">
+          <a class="pl-2 text-3xl font-bold text-[#131313]">Peddy</a>
+        </div>
+        <div class="navbar-center hidden md:flex">
+          <ul class="menu text-lg menu-horizontal px-1 font-semibold">
+            <li><a>Home</a></li>
+            <li><a>Shop</a></li>
+            <li><a>Contact</a></li>
+          </ul>
+        </div>
+        <div class="navbar-end">
+            <div class="h-12 w-12 rounded-full border border-b-gray-200 items-center flex justify-center">
+                <img src="https://img.icons8.com/?size=32&id=15265&format=png" class="h-6 w-6 hidden md:block"alt="">
+                <i class="fa-solid fa-bars h-6 w-6 block md:hidden mt-2 ml-2"></i>
+            </div>
+        </div>
+      </div>
+     
+</nav>
+
+<section class=" w-full  md:w-10/12 mx-auto text-center mt-2 p-3">
+    <h1 class="text-[#131313] text-opacity-70 font-semibold mb-3 lg:mb-6 text-lg md:text-xl">Bringing Families Together ❤️‍🔥</h1>
+      <h1 class="text-[#131313] text-4xl md:text-5xl lg:text-6xl font-bold mb-6"> Your Path to Adoption <span class="inline md:block"> Starts Here</span>
+       </h1>
+<p class="text-[#131313] text-base lg:text-lg  mb-6">It's easy to get caught up in the visual appeal of a page when exploring pet adoption options.<span class="inline lg:block"> Our goal is to make adoption simple and stress-free for every family. With a carefully curated layout.
+</span>
+</p>
+     <div>
+      <a href="#mainSection">
+        <button class="bg-[#0E7A81] rounded-lg text-lg text-white mb-6 py-2 px-4 transition duration-200 font-semibold hover:bg-[#0A5B5B]">
+            View More
+        </button>
+    </a>
+     </div>
+     <div class="flex justify-center items-center">
+        <img src="./images/pet.webp"  alt="">
+     </div>
+  </section>
+    </header>
+    <!-- main section start here -->
+    <main id="mainSection">
+<section class="md:mt-10 p-3">
+<div class="text-center">
+    <h1 class="text-[#131313] text-2xl md:text-3xl font-bold mb-4">Adopt  Your  Best Friend</h1>
+    <p class="text-[#131313] text-base lg:text-lg  mb-6">It's easy to get caught up in the visual appeal of a page when exploring pet adoption options.<span class="inline md:block"> Our goal is to make adoption simple and stress-free for every family. 
+    </span>
+    </p>
+</div>
+</section>
+
+
+<!-- category button display section with Api -->
+
+<section class="mb-4 md:mb-0">
+  <div id="displaybtn" class="flex justify-between items-center w-full mb-3 p-3 md:p-0 md:w-10/12 mx-auto">
+
+  </div>
+</section>
+
+<!--short button -->
+<section>
+  <div class="w-full md:w-10/12 p-3 md:p-0 flex flex-col mb-2 justify-center items-center mx-auto">
+      <div class="flex justify-between items-center w-full">
+          <h1 class="md:text-lg text-base text-[#131313] font-bold">
+              Best Deal For You
+          </h1>
+          <button id="btn" class="btn bg-[#0E7A81] rounded-lg text-lg text-white">
+              Sort by Price
+          </button>
+      </div>
+  </div>
+</section>
+
+<!-- card display section -->
+ <section class="w-full md:w-10/12 p-3 md:p-0 flex flex-col mb-4 justify-center items-center  mx-auto">
+  <div id="spinner">
+        
+  </div>
+  <div id="defaultMessage" class="text-center hidden">
+    <p>Loading, please wait...</p>
+</div>
+ </section>
+
+ <section class="w-full md:w-10/12 mx-auto mb-8 flex flex-col md:flex-row gap-3 lg:gap-8">
+  <div id="grid-container">
+    <div id="card" class="grid grid-cols-1 md:grid-cols-2 p-5 md:p-3 lg:grid-cols-3 gap-5 border border-gray-200 rounded-lg">
+    
+    </div>
+  </div>
+  <div id="emptycontain" class="hidden h-auto w-10/12 mx-auto gap-5 border border-gray-200 rounded-lg p-2">
+    <div class="flex flex-col justify-center items-center bg-gray-100 rounded-lg p-10 lg:p-20">
+      <img src="./images/error.webp" class="h-[200] w-[210px] ml-10 lg:ml-5" alt="No Information Available">
+      <h1 class="text-center text-lg lg:text-2xl text-[#131313]  font-bold">No Information Available</h1>
+      <p class="text-center text-base lg:text-lg text-[#131313] text-opacity-70 ">Unfortunately, we couldn't find any pets matching your criteria. Please check back later or adjust your search filters.</p>
+      
+    </div>
+  </div>
+
+  <!-- Image display grid -->
+  <div id="imagedisplay" class="grid grid-cols-2 overflow-hidden h-[520px] md:h-auto lg:p-0 ml-5 md:ml-0 w-[380px] md:w-[300px] lg:w-[280px] gap-2 border border-gray-200 rounded-lg p-2">
+    <div id="column1" class="col-span-1 p-2"></div>
+    <div id="column2" class="col-span-1 p-2"></div>
+  </div>
+</section>
+
+  
+<!-- details button modal -->
+
+
+<section>
+  <dialog id="customModal" class="modal">
+    <div class="modal-box w-10/12 max-w-5xl " >
+      <div id="modaldetails">
+      </div>
+   </div>
+  </dialog>
+</section>
+
+<!-- adopt modal -->
+<section>
+  <dialog id="adoptionModal" class="modal">
+    <div class="modal-box w-11/12 md:w-6/12 lg:w-3/12 max-w-5xl flex flex-col justify-center items-center">
+      <img src="https://img.icons8.com/?size=80&id=ww1tIlABtSe9&format=png" class="" alt="">
+      <h1 class="font-bold text-3xl lg:text-5xl text-[#131313] mb-5">Congrates</h1>
+      <p class="lg:text-xl text-lg font-semibold text-[#131313]  mb-5">Adoption Process is Start For your Pet</p>
+      <h1 id="countdown" class="lg:text-8xl text-5xl font-bold text-black mb-5">3</h1>
+    </div>
+  </dialog>
+</section>
+    </main>
+    <!-- footer -->
+    <footer class="bg-[rgb(19,19,19)]">
+        <div class="w-10/12 mx-auto grid grid-cols-1 md:grid-cols-3 text-white gap-8 md:gap-14 p-5">
+           <div class="mt-5 md:mt-10  ml-0 lg:ml-10">
+               <div class="flex items-center mb-4">
+                   <img src="./images/logo.webp" class="h-5" alt="">
+                   <a class="pl-2 text-3xl font-bold text-white">Peddy</a>
+               </div>
+               <div class="mb-3 text-white opacity-70">
+                   <p class="mb-1">Location: av. Washington 165, NY CA 54003</p>
+                   <p class="mb-1">Phone: +31 85 964 47 25</p>
+                   <p class="mb-1">Email: info@yourdomain.com</p>
+                   <p class="mb-1">Openings hours: 9.00 AM - 5.00 PM</p>
+               </div>
+               <div class="flex h-10 gap-2">
+                   <img src="https://img.icons8.com/?size=48&id=uLWV5A9vXIPu&format=png" alt="">
+                   <img src="./images/y.png" alt="">
+                   <img src="https://img.icons8.com/?size=80&id=QyYjooyvYGgV&format=png" alt="">
+                   <img src="https://img.icons8.com/?size=48&id=UrgbzHxXKotn&format=png" alt="">
+               </div>
+           </div>
+    
+           <div class="mt-5 md:mt-10 flex flex-col ml-0 md:ml-10 lg:ml-20">
+               <div class="text-base font-bold">
+                   <h1>Useful Links</h1>
+               </div>
+               <p class="mt-4 text-white opacity-70">
+                   Home <br>
+                   About Us <br>
+                   Animals <br>
+                   Foundation <br>
+                   Contact
+               </p>
+           </div>
+    
+           <div class="mt-5 md:mt-10 ml-0 lg:ml-10">
+               <div class="text-base font-bold mb-5">
+                   <h1>Drop Message</h1>
+               </div>
+               <div class="flex flex-col  space-y-3">
+                <input
+                type="text" 
+                placeholder="Enter your email"
+                class="input input-bordered input-sm w-48 h-10 bg-[#FFFFFF0D] text-white opacity-90" />
+              
+                
+                <button class="btn bg-[#0E7A81] rounded-xl w-48 h-12 text-base border-none text-white">Subscribe</button>
+              </div>
+              
+           </div>
+        </div>
+    </footer>
+
+    <script src="./script.js"></script>
+</body>
+</html>
