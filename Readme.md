@@ -59,5 +59,5 @@ To run this project locally, ensure you have the following dependencies installe
 Follow these steps to run **Peddy** on your local machine:
 
 1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/yourusername/peddy.git
+   git clone https://github.com/farhatuloffical78/Adopt-Pet-Website
+
