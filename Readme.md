@@ -60,4 +60,5 @@ Follow these steps to run **Peddy** on your local machine:
 
 1. **Clone the repository**:
    git clone https://github.com/farhatuloffical78/Adopt-Pet-Website
+2. Navigate to the project directory: cd Adopt-pet-Website
 
