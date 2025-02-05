@@ -41,3 +41,23 @@ These features contribute to a more efficient and maintainable codebase in the P
 
 ## Live Deployment Link
 [Click Here to See The Website](https://pet-adoption-fh.netlify.app/)
+
+## **Dependencies**
+
+To run this project locally, ensure you have the following dependencies installed:
+
+- **Node.js** (Required for package management)
+- **Vite** (For a fast development environment)
+- **Tailwind CSS** (For styling)
+- **React Router** (For navigation)
+- **Toast Notifications** (For user interactions)
+- **SweetAlert2** (For confirmation popups)
+- **Countdown Timer** (For adoption status updates)
+
+## **How to Run Locally**
+
+Follow these steps to run **Peddy** on your local machine:
+
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/yourusername/peddy.git
